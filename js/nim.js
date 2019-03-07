@@ -32,12 +32,4 @@ p = new Nim("Susanne", "Eline", undefined, undefined, undefined)
 
 console.log(p);
 
-function(){
-  document.getElementById("myButton").onclick{
-    location.href = "game.html";
-  }
 }
-
-//document.getElementById("myButton").onclick = function () {
-//  location.href = "game.html";
-//};
