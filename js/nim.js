@@ -7,13 +7,29 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
   if (player1 != undefined) {
     this.player1 = {
-      name: player1
+      name: player1,
+      human: true
+    }
+  }
+  
+  if (player1 === undefined) {
+    this.player = {
+      name: Computer1,
+      human: false
     }
   }
 
   if (player2 != undefined) {
     this.player2 = {
-      name: player2
+      name: player2,
+      human = true
+    }
+  }
+
+  if (player2 === undefined) {
+    this.player = {
+      name: Computer2,
+      human: false
     }
   }
 
