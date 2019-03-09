@@ -4,7 +4,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
   this.victory = victory;
   this.total = total;
   this.maxGrab = maxGrab;
-  
+
 //Player 1
   if (player1 != undefined) {
     this.player1 = {
@@ -47,6 +47,10 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
   if (total < 12) {
     throw '"total" må være større enn 12';
+  }
+
+  if (total > 30) {
+    throw '"total" må være lavere enn 30';
   }
 
 //MaxGrab
