@@ -17,8 +17,6 @@ function Nim(player1, player2, victory, total, maxGrab) {
       name: Computer1,
       human: false
     }
-  }
-  if (player1 != human) {
     throw 'Player 1 må være human!';
   }
 
