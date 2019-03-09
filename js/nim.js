@@ -47,5 +47,3 @@ function Nim(player1, player2, victory, total, maxGrab) {
 p = new Nim("Susanne", "Eline", undefined, undefined, undefined)
 
 console.log(p);
-
-}
