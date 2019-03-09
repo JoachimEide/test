@@ -18,6 +18,9 @@ function Nim(player1, player2, victory, total, maxGrab) {
       human: false
     }
   }
+  if (player1 != human) {
+    throw: 'Player 1 må være human!';
+  }
 
   if (player2 != undefined) {
     this.player2 = {
