@@ -14,7 +14,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
   if (player1 === undefined) {
     this.player = {
-      name: computer1,
+      name: player1,
       human: false
     }
     throw 'Player 1 må være human!';
@@ -29,7 +29,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
   if (player2 === undefined) {
     this.player = {
-      name: computer2,
+      name: player2,
       human: false
     }
   }
