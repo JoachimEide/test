@@ -17,7 +17,6 @@ function Nim(player1, player2, victory, total, maxGrab) {
       name: player1,
       human: false
     }
-    throw 'Player 1 må være human!';
   }
 
   if (player2 != undefined) {
@@ -32,6 +31,9 @@ function Nim(player1, player2, victory, total, maxGrab) {
       name: player2,
       human: false
     }
+  }
+  if (player1 === undefined && player2 === undefined) {
+    throw 'Minimum en av spillerne må være human!';
   }
 
   if (total === undefined) {
