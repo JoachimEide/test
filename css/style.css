@@ -1,6 +1,52 @@
-body {
-  background-color: red;
+body{
+  background-color: white;
 }
-main {
-  background-color: green;
+h1{
+  font-family: Helvetica;
+  text-align: center;
+  background-color: SeaGreen;
+  opacity: 0.5;
+  color: white;
+  border:1px solid SeaGreen;(22, 77, 100);
+  border-radius: 5px;
+}
+h2{
+  font-family: Georgia;
+}
+.regler{
+  font-family: Arial;
+  text-align: left;
+  border: 2px solid SeaGreen;(22, 77, 100);
+  border-radius: 5px;
+  background-color: beige;
+  opacity: 0.9;
+}
+
+
+
+.left{
+  border:1px solid black;(22, 77, 100);
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: SeaGreen;
+  opacity: 0.7;
+}
+
+.right{
+  border: 1px solid black (22, 77, 100);
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: SeaGreen;
+  opacity: 0.7;
+
+}
+.center{
+  font-family: Helvetica;
+  text-align: center;
+  background-color: white;
+
 }
