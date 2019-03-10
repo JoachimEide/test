@@ -17,5 +17,3 @@ const humanOrMachine2 = () => {
   let check2 = document.getElementById(check2);
   return check2;
 }
-
-const game = Nim(player1, player2, undefined, undefined, undefined);
