@@ -28,24 +28,24 @@
     <h2>
       Player 1
     </h2>
-    <form id="navn1">
-      Name: <input type="text" name="navn"><br>
-      <input type="button" onclick="myFunction()" value="Submit">
+    <form>
+      Name: <input id="navn1" type="text" name="navn"><br>
+      <input type="button" onclick="getPlayer1()" value="Submit">
     </form>
     <div>
-      <input type="checkbox" id="check">
-      <button onclick="check()">Human</button>
+      <input type="checkbox" id="check1">
+      <button onclick="humanOrMachine1()">Human</button>
     </div>
     <h2>
       Player 2
     </h2>
-    <form id="navn2">
-      Name: <input type="text" name="navn"><br>
-      <input type="button" onclick="myFunction()" value="Submit">
+    <form>
+      Name: <input id="navn2" type="text" name="navn"><br>
+      <input type="button" onclick="getPlayer2()" value="Submit">
     </form>
     <div>
-      <input type="checkbox" id="check">
-      <button onclick="check()">Human</button>
+      <input type="checkbox" id="check2">
+      <button onclick="humanOrMachine2()">Human</button>
     </div>
     <div>
       <button id="startSpill" class="float-left submit-button" href="game.html" >Start spillet</button>
