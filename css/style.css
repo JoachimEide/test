@@ -16,12 +16,10 @@ h2{
 .regler{
   font-family: Arial;
   text-align: left;
-  border: 2px solid SeaGreen;(22, 77, 100);
-  border-radius: 5px;
+  border: 2px solid SeaGreen;
   background-color: beige;
   opacity: 0.9;
 }
-
 
 
 .left{
