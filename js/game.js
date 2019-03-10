@@ -9,11 +9,11 @@ const getPlayer2 = () => {
 }
 
 const humanOrMachine1 = () => {
-  let check1 = document.getElementById(check1);
+  let check1 = document.getElementById(check1).checked;
   return check1;
 }
 
 const humanOrMachine2 = () => {
-  let check2 = document.getElementById(check2);
+  let check2 = document.getElementById(check2).checked;
   return check2;
 }
