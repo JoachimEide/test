@@ -36,35 +36,16 @@ h1{
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-.left {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-around;
+.left, .right, .center{
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.right {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border:1px solid black (22, 77, 100);
-  border-radius: 9px;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.center{
-  text-align: center;
-  font-family: Helvetica;
-  font-weight: bold;
 }
 
 #total{
+<<<<<<< HEAD
   font-size: 60px;
 }
 
@@ -113,4 +94,7 @@ button{
   width: 100px;
   height: 80px;
   background-color: #FFE4C4;
+=======
+  font-size: 30px;
+>>>>>>> a400f81676bda3a03c3004ce2ad9bc8367b62e62
 }
