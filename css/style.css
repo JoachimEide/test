@@ -88,13 +88,13 @@ h1{
 .player-form {
   max-width: 960px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   margin-bottom: 80px;
 }
 .form-control {
   margin-top: 5px;
   width: 80%;
-  text-align: center;
+  text-align: left;
   background: transparent;
   border: none;
   outline: none;
