@@ -1,19 +1,19 @@
 const getPlayer1 = () => {
-  let player1 = document.getElementById(player1).value;
+  let player1 = document.getElementById("player1").value;
   console.log(`Player 1 med navn ${player1} er opprettet!`);
 }
 
 const getPlayer2 = () => {
-  let player2 = document.getElementById(navn2).value;
+  let player2 = document.getElementById("navn2").value;
     console.log(`Player 2 med navn ${player2} er opprettet!`);
 }
 
 const humanOrMachine1 = () => {
-  let check1 = document.getElementById(check1).checked;
+  let check1 = document.getElementById("check1").checked;
   return check1;
 }
 
 const humanOrMachine2 = () => {
-  let check2 = document.getElementById(check2).checked;
+  let check2 = document.getElementById("check2").checked;
   return check2;
 }
