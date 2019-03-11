@@ -36,29 +36,45 @@ h1{
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-.left{
+.left, .right, .center{
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  display: inline-flex;
-}
-
-.right{
-  border:1px solid black (22, 77, 100);
-  border-radius: 9px;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: inline-flex;
-  justify-content: center;
-}
-
-.center{
-  text-align: center;
 }
 
 #total{
   font-size: 30px;
+}
+
+
+
+
+
+
+player-form {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.player-form {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 80px;
+}
+.form-control {
+  margin-top: 5px;
+  width: 80%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 0.5px solid gray;
+  color: ##98a0ad;
+  font-size: 14px;
+  opacity: 0.7;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-bottom: 16px;
 }
