@@ -14,11 +14,16 @@ h2{
   font-family: Georgia;
 }
 .rules{
-  font-family: Arial;
+  font-family: Helvetica;
   text-align: left;
-  border: 2px solid SeaGreen;
+  border: 2px solid SeaGreen (22, 77, 100);
+  border-radius: 9px;
   background-color: beige;
   opacity: 0.9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
 }
 
 
@@ -29,8 +34,8 @@ div.backgroundcolor{
   border-radius: 9px
 }
 .left, .right, .center{
-  border:1px solid black;(22, 77, 100);
-  border-radius: 5px;
+  border:0.5px solid black;(22, 77, 100);
+  border-radius: 9px;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
