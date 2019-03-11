@@ -86,7 +86,6 @@ h1{
 }
 
 .player-form {
-  /*max-width: 960px;*/
   margin: 0 auto;
   text-align: left;
   margin-bottom: 80px;
@@ -124,6 +123,11 @@ form .submit {
 form .submit:hover {
   opacity: 1;
 }
+#check1,
+#check2 {
+  text-align: justify;
+}
+
 
 button{
   width: 100px;
