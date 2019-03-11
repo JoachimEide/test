@@ -44,8 +44,6 @@ h1{
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-
-
 }
 
 .right {
@@ -56,9 +54,6 @@ h1{
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-
-
-
 }
 
 .center{
@@ -72,7 +67,15 @@ h1{
 }
 
 
-
+@media screen and (max-width: 796px){
+  .left{
+    background-color: red;
+    flex-direction: column;
+  }
+  .right{
+    flex-direction: column;
+  }
+}
 
 
 
