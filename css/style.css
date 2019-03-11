@@ -71,10 +71,14 @@ h1{
 
 @media screen and (max-width: 600px){
   .left{
-    flex-direction: column;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
   }
   .right{
-    flex-direction: column;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
   }
 }
 
