@@ -13,7 +13,7 @@ h1{
 h2{
   font-family: Georgia;
 }
-.regler{
+.rules{
   font-family: Arial;
   text-align: left;
   border: 2px solid SeaGreen;
@@ -22,7 +22,7 @@ h2{
 }
 
 
-.left{
+.left, .right{
   border:1px solid black;(22, 77, 100);
   border-radius: 5px;
   text-align: center;
@@ -32,14 +32,6 @@ h2{
   opacity: 0.7;
 }
 
-.right{
-  border: 1px solid black (22, 77, 100);
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: SeaGreen;
-  opacity: 0.7;
 
 }
 .center{
