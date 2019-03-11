@@ -37,7 +37,8 @@ h1{
   border-radius: 9px;
 }
 .left {
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   justify-content: space-around;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
@@ -47,7 +48,8 @@ h1{
 }
 
 .right {
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   justify-content: space-around;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
@@ -67,9 +69,8 @@ h1{
 }
 
 
-@media screen and (max-width: 796px){
+@media screen and (max-width: 600px){
   .left{
-    background-color: red;
     flex-direction: column;
   }
   .right{
