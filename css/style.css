@@ -110,7 +110,7 @@ input {
   height: 30px;
 }
 form .submit {
-   background: linear-gradient(to bottom right, #de6262, #ffb88c);
+   background: SeaGreen;
    border-color: transparent;
    color: #fff;
    font-size: 20px;
