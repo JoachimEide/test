@@ -52,6 +52,7 @@ h1{
   padding-top: 20px;
   padding-bottom: 20px;
   display: inline-flex;
+  justify-content: center;
 }
 
 .center{
