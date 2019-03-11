@@ -26,9 +26,9 @@ h1{
   opacity: 0.9;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 20px;
 
 }
-
 
 .colorbackground{
   background-color: SeaGreen;
@@ -77,4 +77,8 @@ player-form {
   text-decoration: none;
   transition: 0.3s;
   margin-bottom: 16px;
+}
+button{
+  width: 100px;
+  height: 80px;
 }
