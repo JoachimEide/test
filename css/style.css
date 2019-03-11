@@ -47,38 +47,3 @@ h1{
 #total{
   font-size: 30px;
 }
-
-
-
-
-
-
-player-form {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.player-form {
-  max-width: 200px;
-  margin: 0 auto;
-  text-align: left;
-  margin-bottom: 80px;
-}
-.form-control {
-  margin-top: 5px;
-  width: 80%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 0.5px solid gray;
-  color: ##98a0ad;
-  font-size: 14px;
-  opacity: 0.7;
-  text-decoration: none;
-  transition: 0.3s;
-  margin-bottom: 16px;
-}
-button{
-  width: 100px;
-  height: 80px;
-}
