@@ -111,6 +111,7 @@ input {
 }
 form .submit {
    background: SeaGreen;
+   opacity: 0.8;
    border-color: transparent;
    color: #fff;
    font-size: 20px;
