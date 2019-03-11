@@ -63,10 +63,12 @@ h1{
 
 .center{
   text-align: center;
+  font-family: Helvetica;
+  font-weight: bold;
 }
 
 #total{
-  font-size: 40px;
+  font-size: 60px;
 }
 
 
@@ -102,4 +104,5 @@ player-form {
 button{
   width: 100px;
   height: 80px;
+  background-color: #FFE4C4;
 }
