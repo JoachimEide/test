@@ -36,12 +36,30 @@ h1{
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-.left, .right, .center{
+.left {
+  display: inline-flex;
+  justify-content: space-around;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.right {
+  display: inline-flex;
+  justify-content: space-around;
+  border:1px solid black (22, 77, 100);
+  border-radius: 9px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.center{
+  text-align: center;
+  font-family: Helvetica;
+  font-weight: bold;
 }
 
 #total{
