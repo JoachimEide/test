@@ -22,13 +22,13 @@ h2{
 }
 
 
-.backgroundcolor{
+div.backgroundcolor{
   background-color: SeaGreen;
-  opacity: 0.5;
+  opacity: 0.8;
   border: 3px solid SeaGreen (22, 77, 100);
   border-radius: 9px
 }
-.left, .right{
+.left, .right, .center{
   border:1px solid black;(22, 77, 100);
   border-radius: 5px;
   text-align: center;
@@ -36,12 +36,6 @@ h2{
   padding-bottom: 20px;
 }
 
-}
-.center{
-  font-family: Helvetica;
-  text-align: center;
-  background-color: white;
-}
 #total{
   font-size: 30px;
 }
