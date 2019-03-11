@@ -25,15 +25,14 @@
       </li>
     </div>
 
-    <h2>
-      Player 1
-    </h2>
-
-
     <div class="player-form">
       <form id="player-form" method="post" action="">
+
+        <h2>Player 1</h2>
         <input id="player1" name="name" type="text" class="form-control" placeholder="Your Name" required><br>
-        <p>Human:</p><input type="checkbox" id="check1"><br>
+        Human:<input type="checkbox" id="check1"><br>
+
+        <h2>Player 2</h2>
         <input id="player2" name="name" type="text" class="form-control" placeholder="Your Name" required><br>
         Human:<input type="checkbox" id="check2"><br>
         <input type="submit" class="form-control submit" value="Start spillet" onclick="getPlayer1()">
@@ -50,10 +49,9 @@
       <input type="checkbox" id="check1">
       <button onclick="humanOrMachine1()">Human</button>
     </div>
-    <h2>
     -->
-      Player 2
-    </h2>
+
+    <!--
     <form>
       Name: <input id="navn2" type="text" name="navn"><br>
       <input type="button" onclick="getPlayer2()" value="Submit">
@@ -63,6 +61,7 @@
       <button onclick="humanOrMachine2()">Human</button>
     </div>
     <div>
+      -->
       <button id="startSpill" class="float-left submit-button" href="game.html" >Start spillet</button>
       <script type="text/javascript">
       document.getElementById("startSpill").onclick = function () {
