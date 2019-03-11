@@ -36,11 +36,7 @@ h1{
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-<<<<<<< HEAD
 .left {
-=======
-.left, .right, .center{
->>>>>>> 8fe398986834313235e2fa26386e53384858e3d2
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
@@ -48,7 +44,6 @@ h1{
   padding-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .right {
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
@@ -57,10 +52,6 @@ h1{
   padding-bottom: 20px;
   display: inline-flex;
 
-=======
-#total{
-  font-size: 30px;
->>>>>>> 8fe398986834313235e2fa26386e53384858e3d2
 }
 
 
