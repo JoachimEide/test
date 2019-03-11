@@ -1,5 +1,6 @@
 document.getElementById("startSpill").onclick = function startSpill () {
   location.href = "game.html";
+}
 
 const getPlayer1 = () => {
   let player1 = document.getElementById("player1").value;
