@@ -10,7 +10,7 @@ h1{
   border:1px solid SeaGreen;(22, 77, 100);
   border-radius: 5px;
 }
-h2{
+.header{
   font-family: Georgia;
 }
 .rules{
@@ -22,7 +22,7 @@ h2{
   opacity: 0.9;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 20px;
+
 }
 }
 
