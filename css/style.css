@@ -36,7 +36,7 @@ h1{
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-.left{
+.left {
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
@@ -45,14 +45,14 @@ h1{
   display: inline-flex;
 }
 
-.right{
+.right {
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
   display: inline-flex;
-  justify-content: center;
+
 }
 
 .center{
