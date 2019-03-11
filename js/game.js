@@ -1,5 +1,5 @@
 const getPlayer1 = () => {
-  let player1 = document.getElementById(navn1).value;
+  let player1 = document.getElementById(player1).value;
   console.log(`Player 1 med navn ${player1} er opprettet!`);
 }
 
