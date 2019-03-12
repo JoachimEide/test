@@ -84,9 +84,9 @@ main {
   border-radius: 5px;
 }
 .player-form button {
-  width:100px;
-  height: auto;
-  background: linear-gradient(to right, #99f2c8, #1f4037); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width:150px;
+  height: 30px;
+  background: linear-gradient(#99f2c8, #1f4037); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.5;
   color: #fff;
 }
