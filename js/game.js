@@ -22,11 +22,14 @@ const allInfo = () => {
   let maxgrab = parseInt(getInfo("maxgrab"));
   const listOfAll = [spiller1, check1, spiller2, check2, amount, maxgrab];
   console.log(listOfAll);
-  return sessionStorage.setItem("info", JSON.stringify(listOfAll));
-}
+  sessionStorage.setItem("info", JSON.stringify(listOfAll));
+  let gameHref = document.getElementById("start").onclick;
+  location.href = "game.html";
+  };
 
 
 const getUserData = () => {
   const userData = JSON.parse(sessionStorage.getItem("info"));
+  console.log(userData);
   return userData
 }
