@@ -38,7 +38,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
 */
   //Player 1 og Player 2
   if (this.player1.name === undefined || this.player2.name === undefined) {
-    throw 'En eller begge spillerne mangler name egenskapen 2.';
+    throw 'En eller begge spillerne mangler name egenskapen.';
   }
 
   if (this.player1.human === undefined || this.player2.human === undefined) {
