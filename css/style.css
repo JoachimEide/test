@@ -69,7 +69,7 @@ main {
 }
 button {
   width: 100px;
-  height: auto;
+  height: 80;
   background-color: #FFE4C4;
 }
 #startspill {
