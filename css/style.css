@@ -85,46 +85,6 @@ h1{
   }
 }
 
-.player-form {
-  margin: 0 auto;
-  text-align: left;
-  margin-bottom: 80px;
-  padding-left: 20px;
-}
-.form-control {
-  margin-top: 5px;
-  width: 80%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 0.5px solid gray;
-  color: ##98a0ad;
-  font-size: 14px;
-  opacity: 0.8;
-  text-decoration: none;
-  transition: 0.3s;
-  margin-bottom: 20px;
-}
-input {
-  height: 30px;
-}
-form .submit {
-   background: SeaGreen;
-   opacity: 0.8;
-   border-color: transparent;
-   color: #fff;
-   font-size: 20px;
-   font-weight: bold;
-   height: 50px;
-   margin-top: 20px;
-   transition: 0.3s;
-}
-form .submit:hover {
-  opacity: 1;
-}
-
-
 button{
   width: 100px;
   height: 80px;
