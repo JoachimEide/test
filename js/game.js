@@ -1,5 +1,5 @@
 
-const getInfo => (id) {
+const getInfo = id => {
   var info = document.getElementById(id).value
 
   if (info == "") {
@@ -8,7 +8,7 @@ const getInfo => (id) {
   return info
 }
 
-const humanOrMachine = (check) => {
+const humanOrMachine = check => {
   let check = document.getElementById(check).checked;
   return check1;
 }
