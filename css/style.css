@@ -75,6 +75,11 @@ main{
   font-size: 60px;
 }
 
+button{
+  width: 100px;
+  height: 80px;
+  background-color: #FFE4C4;
+}
 
 @media screen and (max-width: 600px){
   .left {
@@ -89,17 +94,10 @@ main{
     flex-direction: row;
   }
 
-
   main {
     flex-direction: column;
   }
   h1{
     font-size: 25px;
   }
-}
-
-button{
-  width: 100px;
-  height: 80px;
-  background-color: #FFE4C4;
 }
