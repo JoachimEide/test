@@ -13,7 +13,6 @@ const humanOrMachine = check => {
   return result;
 }
 
-
 const allInfo = () => {
   let spiller1 = getInfo("player1");
   let spiller2 = getInfo("player2");
@@ -23,5 +22,11 @@ const allInfo = () => {
   let maxgrab = parseInt(getInfo("maxgrab"));
   const listOfAll = [spiller1, check1, spiller2, check2, amount, maxgrab];
   console.log(listOfAll);
-  return listOfAll;
+  return sessionStorage.setItem("info", JSON.stringify(listOfAll));
+}
+
+
+const getUserData = () => {
+  const userData = JSON.parse(sessionStorage.getItem("info"));
+  return userData
 }
