@@ -73,7 +73,16 @@ main {
   height: 80px;
   background-color: #FFE4C4;
 }
-
+.player-form input {
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: SeaGreen;
+  opacity: 0.5;
+  color: white;
+  border:1px solid SeaGreen (22, 77, 100);
+  border-radius: 5px;
+}
 .player-form button {
   background-color: SeaGreen;
   opacity: 0.5;
