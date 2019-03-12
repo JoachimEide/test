@@ -10,7 +10,7 @@ const getInfo = id => {
 
 const humanOrMachine = check => {
   let check = document.getElementById(check).checked;
-  return check1;
+  return check;
 }
 
 
