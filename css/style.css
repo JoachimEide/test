@@ -90,7 +90,7 @@ main {
   opacity: 0.5;
   color: #fff;
 }
-.player-form:hover {
+.player-form button:hover {
   opacity: 1;
 }
 
