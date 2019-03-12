@@ -5,13 +5,13 @@ const getPlayer1 = () => {
 }
 
 const getPlayer2 = () => {
-  let player2 = document.getElementById("navn2").value;
+  let player2 = document.getElementById("player2").value;
     console.log(`Player 2 med navn ${player2} er opprettet!`);
     return player2;
 }
 
 const humanOrMachine1 = () => {
-  let check1 = document.getElementById("check1").checked;
+  let check1 document.getElementById("check1").checked;
   return check1;
 }
 
@@ -20,4 +20,20 @@ const humanOrMachine2 = () => {
   return check2;
 }
 
-const player1 = getPlayer1();
+function getInfo(id){
+  var info = document.getElementById(id).value
+
+  if (info == "") {
+    info = undefined
+  }
+  return info
+}
+
+function samlefunksjon() {
+  var spiller1 = getInfo("player1")
+  var spiller2 = getInfo("navn2")
+  var liste = [spiller1, spiller2]
+  return liste
+
+
+}
