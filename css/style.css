@@ -73,7 +73,7 @@ main {
   height: 80;
   background-color: #FFE4C4;
 }
-#startspill {
+.player-form button {
   background-color: SeaGreen;
   opacity: 0.5;
   color: #fff;
