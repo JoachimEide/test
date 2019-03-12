@@ -54,11 +54,11 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   if (total < 12) {
-    throw '"total" må være større enn 12';
+    throw 'Total antall klinkekuler må være større enn 12';
   }
 
   if (total > 30) {
-    throw '"total" må være lavere enn 30';
+    throw 'Total antall klinkekuler må være lavere enn 30';
   }
 
 //MaxGrab
@@ -67,11 +67,11 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   if (maxGrab <= 1) {
-    throw '"maxGrab" må være større enn 1';
+    throw 'maxGrab må være større enn 1';
   }
 
   if (maxGrab > 5) {
-    throw '"maxGrab" må være 5 eller mindre.'
+    throw 'maxGrab må være 5 eller mindre.'
   }
 
 }
