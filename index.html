@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="nb" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Nim game</title>
-    <script></script>
-    <script></script>
-    <link></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim game - Regler</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/nim.js"></script>
+    <script type="text/javascript" src="js/game.js"> </script>
   </head>
+
   <body>
-<p>Hei</p>
+    <h1>Velkommen til Nim-spillet!</h1>
+
+    <div class="rules">
+      <p> Les spillereglene før du begynner </p>
+      <h2>Spilleregler</h2>
+      <ol>
+          <li> Skriv inn navnet ditt<br></li>
+          <li> Velg å spille mot en venn eller datamaskinen <br></li>
+          <li> Velg hvor mange kuler det skal være i potten <br></li>
+          <li> Velg maksimum antall kuler det skal gå an å trekke hver gang <br></li>
+          <li> Trekk valgfritt antall kuler hver runde. Vinneren er den som trekker siste kulen.</li>
+      <ol>
+    </div>
+
+    <div class="player-form">
+
+        <input id="player1" type="text" placeholder="Player 1">
+        Human:<input type="checkbox" id="check1"><br>
+
+        <input id="player2" type="text" placeholder="Player 2">
+        Human:<input type="checkbox" id="check2"><br>
+
+        <input id="amount" type="text" placeholder="Antall kuler:"><br>
+
+        <input id="maxgrab" type="text" placeholder="Max Grab:"><br>
+
+        <button id="start" onclick="allInfo()" href="game.html"> Start Spillet </button>
+    </div>
+
   </body>
 </html>
