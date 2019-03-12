@@ -67,7 +67,8 @@ main {
 #total {
   font-size: 60px;
 }
-button {
+.left button,
+.right button {
   width: 100px;
   height: 80;
   background-color: #FFE4C4;
