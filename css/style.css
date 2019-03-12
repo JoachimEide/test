@@ -91,7 +91,7 @@ main {
   color: #fff;
 }
 .player-form button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 600px){
