@@ -1,4 +1,4 @@
-
+// Dette kjører vi på index.html
 const getInfo = id => {
   let info = document.getElementById(id).value
   if (info == "") {
@@ -28,6 +28,7 @@ const allInfo = () => {
   location.href = "game.html";
   };
 
+// Dette kjører vi på game.html
 
 const getUserData = () => {
   const userData = JSON.parse(sessionStorage.getItem("info"));
@@ -35,4 +36,30 @@ const getUserData = () => {
   const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
   console.log(gameObject)
   return gameObject;
+}
+
+// Forsøk på oppførsel på knapper
+
+const getValueOfButton = id => {
+  let value = parseInt(document.getElementById(id).name);
+  return value
+}
+
+const game = () => {
+  const objOfGame = getUserData();
+  let turn = 1;
+  let total = objOfGame.total;
+  while (total >= 0) {
+    if (turn % 2 === 0) {
+      console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
+      // her må vi skrive oppførsel for hver enkelt knapp når de trykkes
+      turn++;
+      total--;
+    } else {
+      console.log(`${objOfGame.player2.name}'s turn, the total is ${total}`)
+// her må vi skrive oppførsel for hver enkelt knapp når de trykkes
+      turn++;
+      total--;
+    }
+  }
 }
