@@ -36,15 +36,15 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   //Player 1 og Player 2
-  if (player1.name === undefined || player2.name === undefined) {
-    throw 'En eller begge spillerne mangler name egenskapen.';
+  if (this.player1.name === undefined || this.player2.name === undefined) {
+    throw 'En eller begge spillerne mangler name egenskapen 2.';
   }
 
-  if (player1.human === undefined || player2.human === undefined) {
+  if (this.player1.human === undefined || this.player2.human === undefined) {
     throw 'En eller begge spillerne mangler human egenskapen.'
   }
 
-  if (player1.human === false && player2.human === false) {
+  if (this.player1.human === false && this.player2.human === false) {
     throw 'Minimum en av spillerne må være human!';
   }
 
@@ -76,6 +76,11 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
 }
 
-var spill = new Nim("Susanne", "Eline", undefined, 20, 4)
+var spill = new Nim("Susanne", "Eline", function (){victory()}, 20, 4)
 
-console.log(spill.player1.human);
+console.log(spill.player1.name);
+
+function victory(vinner){
+  var winner = vinner.name
+  return winner
+}
