@@ -78,4 +78,4 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
 var spill = new Nim("Susanne", "Eline", undefined, 20, 4)
 
-console.log(spill.player1.name);
+console.log(spill.player1.human);
