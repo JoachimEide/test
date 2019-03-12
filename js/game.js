@@ -1,7 +1,6 @@
 
 const getInfo = id => {
-  var info = document.getElementById(id).value
-
+  let info = document.getElementById(id).value
   if (info == "") {
     info = undefined
   }
@@ -18,9 +17,11 @@ const allInfo = () => {
   let spiller2 = getInfo("player2");
   let check1 = humanOrMachine("check1");
   let check2 = humanOrMachine("check2");
+  let obj1 = {name: spiller1, human: check1};
+  let obj2 = {name: spiller2, human: check2};
   let amount = parseInt(getInfo("amount"));
   let maxgrab = parseInt(getInfo("maxgrab"));
-  const listOfAll = [spiller1, check1, spiller2, check2, amount, maxgrab];
+  const listOfAll = [obj1, obj2, amount, maxgrab];
   console.log(listOfAll);
   sessionStorage.setItem("info", JSON.stringify(listOfAll));
   let gameHref = document.getElementById("start").onclick;
@@ -31,5 +32,7 @@ const allInfo = () => {
 const getUserData = () => {
   const userData = JSON.parse(sessionStorage.getItem("info"));
   console.log(userData);
-  return userData
+  const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
+  console.log(gameObject)
+  return gameObject;
 }

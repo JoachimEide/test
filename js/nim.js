@@ -6,6 +6,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
   this.maxGrab = maxGrab;
 
 //Player 1
+/*
   if (player1 != undefined) {
     this.player1 = {
       name: player1,
@@ -14,7 +15,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   if (player1 === undefined) {
-    this.player = {
+    this.player1 = {
       name: player1,
       human: false
     }
@@ -29,12 +30,12 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   if (player2 === undefined) {
-    this.player = {
+    this.player2 = {
       name: player2,
       human: false
     }
   }
-
+*/
   //Player 1 og Player 2
   if (this.player1.name === undefined || this.player2.name === undefined) {
     throw 'En eller begge spillerne mangler name egenskapen 2.';
@@ -76,9 +77,6 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
 }
 
-var spill = new Nim("Susanne", "Eline", function (){victory()}, 20, 4)
-
-console.log(spill.player1.name);
 
 function victory(vinner){
   var winner = vinner.name
