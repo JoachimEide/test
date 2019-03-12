@@ -19,3 +19,5 @@ const humanOrMachine2 = () => {
   let check2 = document.getElementById("check2").checked;
   return check2;
 }
+
+const player1 = getPlayer1();
