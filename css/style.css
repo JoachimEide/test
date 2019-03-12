@@ -1,7 +1,7 @@
-body{
+body {
   background-color: white;
 }
-h1{
+h1 {
   font-family: Helvetica;
   font-size: 60px;
   text-align: center;
@@ -13,10 +13,10 @@ h1{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.header{
+.header {
   font-family: Georgia;
 }
-.rules{
+.rules {
   font-family: Helvetica;
   letter-spacing: 1px;
   text-align: left;
@@ -28,10 +28,8 @@ h1{
   padding-bottom: 20px;
   padding-left: 20px;
   margin-bottom: 30px;
-
 }
-
-main{
+main {
   display: flex;
   justify-content:space-around;
   width: 100%;
@@ -41,8 +39,6 @@ main{
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-
-
 .left {
   display: flex;
   flex-direction: column;
@@ -53,7 +49,6 @@ main{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 .right {
   display: flex;
   flex-direction: column;
@@ -64,21 +59,23 @@ main{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
-.center{
+.center {
   text-align: center;
   font-family: Helvetica;
   font-weight: bold;
 }
-
-#total{
+#total {
   font-size: 60px;
 }
-
-button{
+button {
   width: 100px;
   height: 80px;
   background-color: #FFE4C4;
+}
+#startspill {
+  width: 100px;
+  height: 80px;
+  background-color: SeaGreen;
 }
 
 @media screen and (max-width: 600px){
@@ -86,14 +83,12 @@ button{
     display: inline-flex;
     justify-content: space-around;
     flex-direction: row;
-
   }
   .right {
     display: inline-flex;
     justify-content: space-around;
     flex-direction: row;
   }
-
   main {
     flex-direction: column;
   }
