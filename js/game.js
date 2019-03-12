@@ -9,8 +9,8 @@ const getInfo = id => {
 }
 
 const humanOrMachine = check => {
-  let check = document.getElementById(check).checked;
-  return check;
+  let result = document.getElementById(check).checked;
+  return result;
 }
 
 
@@ -19,6 +19,9 @@ const allInfo = () => {
   let spiller2 = getInfo("player2");
   let check1 = humanOrMachine("check1");
   let check2 = humanOrMachine("check2");
-  const listOfAll = [spiller1, check1, spiller2, check2];
+  let amount = parseInt(getInfo("amount"));
+  let maxgrab = parseInt(getInfo("maxgrab"));
+  const listOfAll = [spiller1, check1, spiller2, check2, amount, maxgrab];
+  console.log(listOfAll);
   return listOfAll;
 }
