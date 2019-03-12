@@ -74,7 +74,8 @@ button {
 }
 #startspill {
   background-color: SeaGreen;
-  opacity: 0.8;
+  opacity: 0.5;
+  color: #fff;
 }
 
 @media screen and (max-width: 600px){
