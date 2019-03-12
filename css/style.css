@@ -31,15 +31,23 @@ h1{
 
 }
 
-.colorbackground{
+main{
+  width: 100%;
+  height: auto;
   background-color: SeaGreen;
   opacity: 0.8;
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
+
+body{
+  display: flex;
+  justify-content:space-around;
+}
+
+
 .left {
-  display: block;
-  justify-content: space-around;
+  display: inline-block;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
@@ -48,8 +56,7 @@ h1{
 }
 
 .right {
-  display: block;
-  justify-content: space-around;
+  display: inline-block;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
