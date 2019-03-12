@@ -63,6 +63,7 @@ main {
   text-align: center;
   font-family: Helvetica;
   font-weight: bold;
+  color: white;
 }
 #total {
   font-size: 60px;
