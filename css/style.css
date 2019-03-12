@@ -73,11 +73,13 @@ main {
   height: 80;
   background-color: #FFE4C4;
 }
+/*
 .player-form button {
   background-color: SeaGreen;
   opacity: 0.5;
   color: #fff;
 }
+*/
 
 @media screen and (max-width: 600px){
   .left {
