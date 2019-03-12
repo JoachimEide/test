@@ -44,7 +44,9 @@ main{
 
 
 .left {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
@@ -53,7 +55,9 @@ main{
 }
 
 .right {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   border:1px solid black (22, 77, 100);
   border-radius: 9px;
   text-align: center;
@@ -62,6 +66,7 @@ main{
 }
 
 .center{
+  padding-top: 120px;
   text-align: center;
   font-family: Helvetica;
   font-weight: bold;
@@ -83,6 +88,11 @@ main{
     display: inline-flex;
     justify-content: space-around;
     flex-direction: row;
+  }
+
+
+  main {
+    flex-direction: column;
   }
   h1{
     font-size: 25px;
