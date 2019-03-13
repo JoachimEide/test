@@ -40,8 +40,8 @@ const getUserData = () => {
 
 // Forsøk på oppførsel på knapper
 const objOfGame = getUserData();
+let turn = 1;
 const game = () => {
-  let turn = 1;
   let total = objOfGame.total;
   while (total >= 0) {
     if (turn % 2 === 0) {
