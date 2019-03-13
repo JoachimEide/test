@@ -93,7 +93,7 @@ main {
   height: 30px;
   background-color: Teal;
   opacity: 0.5;
-  color: #fff;
+  color: white;
 }
 .player-form button:hover {
   opacity: 0.8;
