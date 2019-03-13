@@ -51,7 +51,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
   // 1 player vs computer
   if (this.player1.name != undefined && this.player2.name === undefined) {
-    this.player2.name = {
+    this.player2 = {
       name: 'Computer',
       human: false
     }
