@@ -82,11 +82,15 @@ main {
   color: white;
   padding: 10px 10px;
   margin-bottom: 10px;
-  /*border: none;
+  border: none;
   background-color: SeaGreen;
   opacity: 0.5;*/
   border:1px solid SeaGreen (22, 77, 100);
   border-radius: 5px;
+}
+::placeholder {
+  color: white;
+  opacity: 1;
 }
 .player-form button {
   width:150px;
