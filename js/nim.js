@@ -48,6 +48,11 @@ function Nim(player1, player2, victory, total, maxGrab) {
   if (this.player1.human === false && this.player2.human === false) {
     throw 'Minimum en av spillerne må være human!';
   }
+  
+  // 1 player vs computer
+  if (this.player1.name != undefined && this.player2.name === undefined) {
+    this.player2.name = 'Computer';
+  }
 
 //Total
   if (total === undefined) {
