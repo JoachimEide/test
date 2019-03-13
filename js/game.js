@@ -42,8 +42,9 @@ const getUserData = () => {
 const objOfGame = getUserData();
 const game = () => {
   let turn = 1;
+  let total = objOfGame.total;
   while (total >= 0) {
-    if (turn % 2 != 0) {
+    if (turn % 2 === 0) {
       console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
       // her må vi skrive oppførsel for hver enkelt knapp når de trykkes
       objOfGame.total--;
