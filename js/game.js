@@ -40,11 +40,16 @@ const getUserData = () => {
 
 // Forsøk på oppførsel på knapper
 
-const getValueOfButton = id => {
+const getValueOfButton = (id) => {
   let value = parseInt(document.getElementById(id).name);
-  return value
+  console.log(value);
+  return value;
 }
 
+const chooseButton = (id) => {
+  let id = document.getElementById(id);
+  id.addEventListener("click", getValueOfButton(id, totalLeft));
+}
 const game = () => {
   const objOfGame = getUserData();
   let turn = 1;
@@ -53,13 +58,17 @@ const game = () => {
     if (turn % 2 === 0) {
       console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
       // her må vi skrive oppførsel for hver enkelt knapp når de trykkes
+      chooseButton("p1-1");
+      chooseButton("p1-2");
+      chooseButton("p1-3");
       turn++;
-      total--;
     } else {
       console.log(`${objOfGame.player2.name}'s turn, the total is ${total}`)
 // her må vi skrive oppførsel for hver enkelt knapp når de trykkes
+      chooseButton("p2-1")
+      chooseButton("p2-2")
+      chooseButton("p2-3")
       turn++;
-      total--;
     }
   }
 }

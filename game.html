@@ -11,12 +11,12 @@
 
   <body onload="getUserData()">
 
-    <main>
+    <main onload="game()">
 
       <div class="left">
-        <button id="p1-1" onclick="game()" type="button" name="1">1</button>
-        <button id="p1-2" type="button" name="2">2</button>
-        <button id="p1-3" type="button" name="3">3</button>
+        <button id="p1-1" onclick="getValueOfButton('p1-1', total)" type="button" name="1">1</button>
+        <button id="p1-2" onclick="getValueOfButton('p1-2', total)" type="button" name="2">2</button>
+        <button id="p1-3" onclick="getValueOfButton('p1-3', total)" type="button" name="3">3</button>
       </div>
 
       <div class="center">
@@ -25,9 +25,9 @@
       </div>
 
       <div class="right">
-        <button id="p2-1" onclick="game()"type="button" name="1">1</button>
-        <button id="p2-2" type="button" name="2">2</button>
-        <button id="p2-3" type="button" name="3">3</button>
+        <button id="p2-1" onclick="getValueOfButton('p2-1', total)" type="button" name="1">1</button>
+        <button id="p2-2" onclick="getValueOfButton('p2-2', total)" type="button" name="2">2</button>
+        <button id="p2-3" onclick="getValueOfButton('p2-3', total)" type="button" name="3">3</button>
       </div>
 
     </main>
