@@ -4,6 +4,9 @@ function Nim(player1, player2, victory, total, maxGrab) {
   this.victory = victory;
   this.total = total;
   this.maxGrab = maxGrab;
+  this.reduceTotal = function() {
+    
+  }
 
 //Player 1
 /*
