@@ -37,9 +37,10 @@ const getUserData = () => {
   console.log(gameObject)
   makeGame(userData[3], userData[2])
   let turnCount = 1;
-  buttonAction(gameObject.total)
-  return gameObject;
-}
+  buttonAction(gameObject.total);
+  return console.log(gameObject);
+  }
+
 
 const makeGame = (maxGrab, totalCounter) => {
   document.getElementById("total").innerHTML = totalCounter;
@@ -53,41 +54,51 @@ const makeGame = (maxGrab, totalCounter) => {
   }
 }
 
-const checkTurn = (turn, player1Name, player2Name) => {
+const checkTurn = (turn) => {
   let message = "";
   if (turn % 2 != 0) {
-    message = `Det er ${player1Name} sin tur:`
+    message = `Det er ${gameObject.player1.name} sin tur:`
     document.getElementById("message").innerHTML = message;
+    turn++;
   } else {
-    message = `Det er ${player2Name} sin tur:`
+    message = `Det er ${gameObject.player2.name} sin tur:`
     document.getElementById("message").innerHTML = message;
+    turn++;
   }
 }
 
 const buttonAction = total => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-  let grab = 1;
-  for (let i = 0; i < listOfButtonID.length; i++) {
-    if (i <= 1)
-    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
-      grab++;
-      console.log('Du trykket på 1');
-      return grab;
+    document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
+      total -= 1;
+      document.getElementById("total").innerHTML = total;
     })
-    if (i <= 3)
-    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
-      grab++;
-      return grab;
+    document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
+      total -= 1;
+      document.getElementById("total").innerHTML = total;
     })
-    if (i <= 5)
-    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
-      grab++;
-      return grab;
+    document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
+      total -= 2;
+      document.getElementById("total").innerHTML = total;
     })
-    if (i <= 7)
-    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
-      grab++;
-      return grab;
+    document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
+      total -= 2;
+      document.getElementById("total").innerHTML = total;
+    })
+    document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
+      total -= 3;
+      document.getElementById("total").innerHTML = total;
+    })
+    document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
+      total -= 3;
+      document.getElementById("total").innerHTML = total;
+    })
+    document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
+      total -= 4;
+      document.getElementById("total").innerHTML = total;
+    })
+    document.getElementById(listOfButtonID[7]).addEventListener("click", function(){
+      total -= 4;
+      document.getElementById("total").innerHTML = total;
     })
   }
-}
