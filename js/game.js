@@ -37,8 +37,10 @@ const getUserData = () => {
   console.log(gameObject)
   makeGame(userData[3], userData[2])
   let turnCount = 1;
+  buttonAction(gameObject.total)
   return gameObject;
 }
+
 const makeGame = (maxGrab, totalCounter) => {
   document.getElementById("total").innerHTML = totalCounter;
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"]
@@ -51,8 +53,41 @@ const makeGame = (maxGrab, totalCounter) => {
   }
 }
 
-const checkTurn = turn => {
+const checkTurn = (turn, player1Name, player2Name) => {
+  let message = "";
   if (turn % 2 != 0) {
-    console.log();
+    message = `Det er ${player1Name} sin tur:`
+    document.getElementById("message").innerHTML = message;
+  } else {
+    message = `Det er ${player2Name} sin tur:`
+    document.getElementById("message").innerHTML = message;
+  }
+}
+
+const buttonAction = total => {
+  const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
+  let grab = 1;
+  for (let i = 0; i < listOfButtonID.length; i++) {
+    if (i <= 1)
+    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
+      grab++;
+      console.log('Du trykket på 1');
+      return grab;
+    })
+    if (i <= 3)
+    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
+      grab++;
+      return grab;
+    })
+    if (i <= 5)
+    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
+      grab++;
+      return grab;
+    })
+    if (i <= 7)
+    document.getElementById(listOfButtonID[i]).addEventListener("click", function(){
+      grab++;
+      return grab;
+    })
   }
 }
