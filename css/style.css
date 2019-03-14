@@ -5,13 +5,14 @@ body {
 h1 {
   font-family: Helvetica;
   font-size: 60px;
-  text-align: center;
+  text-align: left;
   background: linear-gradient(to left, #093637, #44A08D);
   color: #E8E8E8;
   border:1px solid SeaGreen (22, 77, 100);
   border-radius: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 20px;
 }
 .header {
   font-family: Georgia;
