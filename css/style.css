@@ -68,6 +68,11 @@ main {
   font-family: Helvetica;
   font-weight: bold;
   color: white;
+  padding-top: 25px;
+  padding-bottom: 40px;
+}
+.center p {
+  font-size: 15px;
 }
 #total {
   font-size: 60px;
@@ -81,10 +86,11 @@ main {
   color: white;
   font-size: 15px;
   border: 4px solid white;
+  border-radius: 9px;
 }
 .left button:hover,
 .right button:hover {
-  opacity: 0.8;
+  border: 12px solid white;
 }
 #p1-1,
 #p2-1,
