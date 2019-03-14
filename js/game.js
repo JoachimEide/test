@@ -30,6 +30,14 @@ const allInfo = () => {
 
 // Dette kjører vi på game.html
 
+const getUserData = () => {
+  const userData = JSON.parse(sessionStorage.getItem("info"));
+  console.log(userData);
+  const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
+  console.log(gameObject)
+  makeButton(userData[3])
+  return gameObject;
+}
 const makeButton = maxGrab => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"]
   let counterOfButtonID = 0;
@@ -41,17 +49,8 @@ const makeButton = maxGrab => {
   }
 }
 
-const getUserData = () => {
-  const userData = JSON.parse(sessionStorage.getItem("info"));
-  console.log(userData);
-  const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
-  console.log(gameObject)
-  makeButton(userData[3])
-  return gameObject;
-}
-
 // Forsøk på oppførsel på knapper
-const objOfGame = getUserData();
+
 let turn = 1;
 
 const button1 = () => {
