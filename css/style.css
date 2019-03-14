@@ -64,9 +64,7 @@ main {
   padding-bottom: 20px;
 }
 .center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 100px;
   text-align: center;
   font-family: Helvetica;
   font-weight: bold;
@@ -139,6 +137,9 @@ main {
     display: inline-flex;
     justify-content: space-around;
     flex-direction: row;
+  }
+  .center {
+    padding: 0;
   }
   main {
     flex-direction: column;
