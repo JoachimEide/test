@@ -8,48 +8,17 @@ function Nim(player1, player2, victory, total, maxGrab) {
     return this.total--;
   }
 
-//Player 1
-/*
-  if (player1 != undefined) {
-    this.player1 = {
-      name: player1,
-      human: true
-    }
-  }
-
-  if (player1 === undefined) {
-    this.player1 = {
-      name: player1,
-      human: false
-    }
-  }
-
-//Player 2
-  if (player2 != undefined) {
-    this.player2 = {
-      name: player2,
-      human: true
-    }
-  }
-
-  if (player2 === undefined) {
-    this.player2 = {
-      name: player2,
-      human: false
-    }
-  }
-*/
   //Player 1 og Player 2
-  if (this.player1.name === undefined || this.player2.name === undefined) {
-    throw 'En eller begge spillerne mangler name egenskapen!';
-  }
-
-  if (this.player1.human === undefined || this.player2.human === undefined) {
-    throw 'En eller begge spillerne mangler human egenskapen!'
+  if (this.player1.name === undefined) {
+    throw 'Player1 mangler name egenskapen.';
   }
 
   if (this.player1.human === false && this.player2.human === false) {
     throw 'Minimum en av spillerne må være human!';
+  }
+
+  if (this.player2.name === undefined) {
+    this.player2.name = 'Player2'
   }
 
 //Total
@@ -58,11 +27,11 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   if (total < 12) {
-    throw 'Total antall klinkekuler må være større enn 12!';
+    throw 'Total antall klinkekuler må være større enn 12';
   }
 
-  if (total > 40) {
-    throw 'Total antall klinkekuler må være lavere enn 40!';
+  if (total > 30) {
+    throw 'Total antall klinkekuler må være lavere enn 30';
   }
 
 //MaxGrab
@@ -71,11 +40,11 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
   if (maxGrab <= 1) {
-    throw 'maxGrab må være større enn 1!';
+    throw 'maxGrab må være større enn 1';
   }
 
   if (maxGrab > 4) {
-    throw 'maxGrab må være 4 eller mindre!'
+    throw 'maxGrab må være 4 eller mindre.'
   }
 
 }
