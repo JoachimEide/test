@@ -34,10 +34,10 @@ const makeButton = maxGrab => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"]
   let counterOfButtonID = 0;
   for (let i = 0; i < maxGrab; i++) {
-    document.getElementById(counterOfButtonID).style.display="block";
+    document.getElementById(listOfButtonID[counterOfButtonID]).style.display="block";
     counterOfButtonID++;
-    document.getElementById(counterOfButtonID).style.display="block";
-    counterOfButtonID++;  
+    document.getElementById(listOfButtonID[counterOfButtonID]).style.display="block";
+    counterOfButtonID++;
   }
 }
 
