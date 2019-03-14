@@ -64,12 +64,13 @@ main {
   padding-bottom: 20px;
 }
 .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   font-family: Helvetica;
   font-weight: bold;
   color: white;
-  padding-top: 25px;
-  padding-bottom: 40px;
 }
 .center p {
   font-size: 15px;
