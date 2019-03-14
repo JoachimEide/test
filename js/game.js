@@ -65,9 +65,35 @@ const checkTurn = (turn, p1, p2) => {
   }
 }
 
+const checkButton = (total, maxGrab, listOfButtonID) => {
+  if (total < 4) {
+    document.getElementById(listOfButtonID[7]).style.display="none";
+    document.getElementById(listOfButtonID[6]).style.display="none";
+    maxGrab = 3;
+  }
+  if (total < 3) {
+    document.getElementById(listOfButtonID[7]).style.display="none";
+    document.getElementById(listOfButtonID[6]).style.display="none";
+    document.getElementById(listOfButtonID[5]).style.display="none";
+    document.getElementById(listOfButtonID[4]).style.display="none";
+    maxGrab = 2;
+  }
+  if (total < 2) {
+    document.getElementById(listOfButtonID[7]).style.display="none";
+    document.getElementById(listOfButtonID[6]).style.display="none";
+    document.getElementById(listOfButtonID[5]).style.display="none";
+    document.getElementById(listOfButtonID[4]).style.display="none";
+    document.getElementById(listOfButtonID[3]).style.display="none";
+    document.getElementById(listOfButtonID[2]).style.display="none";
+    maxGrab = 1;
+  }
+  return maxGrab;
+}
+
 const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
   checkTurn(turn, p1, p2);
+  checkButton(total, maxGrab, listOfButtonID)
   if (turn % 2 != 0) {
       document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
       total -= 1;
