@@ -43,19 +43,22 @@ const objOfGame = getUserData();
 let turn = 1;
 const game = () => {
   let total = objOfGame.total;
-  while (total >= 0) {
-    if (turn % 2 === 0) {
-      console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
-      // her må vi skrive oppførsel for hver enkelt knapp når de trykkes
+  while (total > 0) {
+    if (turn % 2 != 0) {
       objOfGame.total--;
+      console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
       turn++;
       break;
     } else {
-      console.log(`${objOfGame.player2.name}'s turn, the total is ${total}`)
-// her må vi skrive oppførsel for hver enkelt knapp når de trykkes
       objOfGame.total--;
+      console.log(`${objOfGame.player2.name}'s turn, the total is ${total}`)
       turn++;
       break;
     }
+  }
+  if (total === 0 && turn % 2 === 0) {
+    console.log(`${objOfGame.player1.name} is the WINNER! `)
+  } else if (total === 0 && turn % 2 != 0) {
+    console.log(`${objOfGame.player2.name} is the WINNER! `)
   }
 }
