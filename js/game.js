@@ -37,7 +37,7 @@ const getUserData = () => {
   console.log(gameObject)
   makeGame(userData[3], userData[2])
   let turnCount = 1;
-  buttonAction(gameObject.total);
+  buttonAction(gameObject.total, turnCount);
   return console.log(gameObject);
   }
 
@@ -67,38 +67,57 @@ const checkTurn = (turn) => {
   }
 }
 
-const buttonAction = total => {
+const buttonAction = (total, turn) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-    document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
+  if (turn % 2 != 0) {
+      document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
       total -= 1;
+      turn++;
       document.getElementById("total").innerHTML = total;
-    })
-    document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
-      total -= 1;
-      document.getElementById("total").innerHTML = total;
-    })
-    document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
+      buttonAction(total, turn);
+    },{once: true})
+      document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
       total -= 2;
+      turn++;
       document.getElementById("total").innerHTML = total;
-    })
-    document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
-      total -= 2;
-      document.getElementById("total").innerHTML = total;
-    })
+      buttonAction(total, turn);
+    },{once: true})
     document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
       total -= 3;
+      turn++;
       document.getElementById("total").innerHTML = total;
-    })
-    document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
-      total -= 3;
-      document.getElementById("total").innerHTML = total;
-    })
+      buttonAction(total, turn);
+    },{once: true})
     document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
       total -= 4;
+      turn++;
       document.getElementById("total").innerHTML = total;
-    })
+      buttonAction(total, turn);
+    },{once: true})
+  } else {
+    document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
+      total -= 1;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn);
+    },{once: true})
+    document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
+      total -= 2;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn);
+    },{once: true})
+    document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
+      total -= 3;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn);
+    },{once: true})
     document.getElementById(listOfButtonID[7]).addEventListener("click", function(){
       total -= 4;
+      turn--;
       document.getElementById("total").innerHTML = total;
-    })
+      buttonAction(total, turn);
+    },{once: true})
+  }
   }
