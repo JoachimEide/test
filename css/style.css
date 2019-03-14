@@ -78,6 +78,17 @@ main {
   height: 80px;
   background-color: #FFE4C4;
 }
+#p1-1,
+#p2-1,
+#p1-2,
+#p2-2,
+#p1-3,
+#p2-3,
+#p1-4,
+#p2-4 {
+  display: none;
+}
+
 .player-form input {
   color: white;
   padding: 10px 10px;
