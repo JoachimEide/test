@@ -146,6 +146,15 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
     },{once: true})
   } else if (turn % 2 === 0 && p2Human === false ){
     let randomGrab = Math.floor(Math.random() * maxGrab) + 1;
+    if (total === 4) {
+      randomGrab = 4;
+    } else if (total === 3){
+      randomGrab = 3;
+    } else if (total === 2){
+      randomGrab = 2;
+    } else if (total === 1){
+      randomGrab = 1;
+    }
     total -= randomGrab;
     turn--;
     console.log(randomGrab);
