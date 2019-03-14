@@ -65,7 +65,7 @@ const checkTurn = (turn, p1, p2) => {
   }
 }
 
-const computerChoice = () => {
+const computerChoice = (maxGrab) => {
   let number = Math.floor(Math.random() * maxGrab) + 1;
   return number;
 }
@@ -153,8 +153,8 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
     },{once: true})
 
   } else if (turn % 2 === 0 && p2Human === false ){
-    randomGrab = Math.floor(Math.random() * maxGrab) + 1;
-    total -= randomGrab;
+    let computerNumber = computerChoice()
+    total -= computerNumber;
     turn--;
     document.getElementById("total").innerHTML = total;
     buttonAction(total, turn, p1, p2, p2Human, maxGrab);
