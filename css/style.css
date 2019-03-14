@@ -131,12 +131,13 @@ main {
     display: inline-flex;
     justify-content: space-around;
     flex-direction: row;
+    transform: rotate(180deg);
   }
   .right {
     display: inline-flex;
     justify-content: space-around;
     flex-direction: row;
-  }
+   }
   .center {
     padding: 0;
   }
