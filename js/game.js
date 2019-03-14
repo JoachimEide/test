@@ -35,10 +35,12 @@ const getUserData = () => {
   console.log(userData);
   const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
   console.log(gameObject)
-  makeButton(userData[3])
+  makeGame(userData[3], userData[2])
+  let turnCount = 1;
   return gameObject;
 }
-const makeButton = maxGrab => {
+const makeGame = (maxGrab, totalCounter) => {
+  document.getElementById("total").innerHTML = totalCounter;
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"]
   let counterOfButtonID = 0;
   for (let i = 0; i < maxGrab; i++) {
@@ -49,50 +51,8 @@ const makeButton = maxGrab => {
   }
 }
 
-// Forsøk på oppførsel på knapper
-
-let turn = 1;
-
-const button1 = () => {
-  let total = objOfGame.total;
-  while (total > 0) {
-    if (turn % 2 != 0) {
-      objOfGame.total--;
-      console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
-      turn++;
-      break;
-    } else {
-      objOfGame.total--;
-      console.log(`${objOfGame.player2.name}'s turn, the total is ${total}`)
-      turn++;
-      break;
-    }
-  }
-  if (total === 0 && turn % 2 === 0) {
-    console.log(`${objOfGame.player1.name} is the WINNER! `)
-  } else if (total === 0 && turn % 2 != 0) {
-    console.log(`${objOfGame.player2.name} is the WINNER! `)
-  }
-}
-
-const button2 = () => {
-  let total = objOfGame.total;
-  while (total > 0) {
-    if (turn % 2 != 0) {
-      objOfGame.total = objOfGame.total - 2;
-      console.log(`${objOfGame.player1.name}'s turn, the total is ${total}`)
-      turn++;
-      break;
-    } else {
-      objOfGame.total-2;
-      console.log(`${objOfGame.player2.name}'s turn, the total is ${total}`)
-      turn++;
-      break;
-    }
-  }
-  if (total === 0 && turn % 2 === 0) {
-    console.log(`${objOfGame.player1.name} is the WINNER! `)
-  } else if (total === 0 && turn % 2 != 0) {
-    console.log(`${objOfGame.player2.name} is the WINNER! `)
+const checkTurn = turn => {
+  if (turn % 2 != 0) {
+    console.log();
   }
 }
