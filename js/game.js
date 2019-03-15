@@ -54,13 +54,23 @@ const makeGame = (maxGrab, totalCounter) => {
   }
 }
 
-const checkTurn = (turn, p1, p2) => {
+const checkTurn = (total, turn, p1, p2, p2Human) => {
   let message = "";
-  if (turn % 2 != 0) {
-    message = `Det er ${p1} sin tur:`
+  if (turn % 2 != 0 && p2Human === true) {
+    message = `Det er ${p1} sin tur:`;
     document.getElementById("message").innerHTML = message;
-  } else {
-    message = `Det er ${p2} sin tur:`
+  } else if (turn % 2 != 0 && p2Human === false) {
+    message = `Det er ${p2} sin tur:`;
+    function myFunction() {
+      setTimeout(function(){document.getElementById("message").innerHTML = message;
+      document.getElementById("total").innerHTML = total;}, 3000);
+    }
+    myFunction()
+  } else if (turn % 2 === 0 && p2Human === true) {
+    message = `Det er ${p2} sin tur:`;
+    document.getElementById("message").innerHTML = message;
+  } else if (turn % 2 === 0 && p2Human === false) {
+    message = `Det er ${p2} sin tur:`;
     document.getElementById("message").innerHTML = message;
   }
 }
@@ -104,13 +114,12 @@ const aiRobot2 = (total, turn, p1, p2, p2Human, maxGrab) => {
   total -= randomGrab;
   turn--;
   console.log(randomGrab);
-  document.getElementById("total").innerHTML = total;
   buttonAction(total, turn, p1, p2, p2Human, maxGrab);
 }
 
 const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-  checkTurn(turn, p1, p2);
+  checkTurn(total, turn, p1, p2, p2Human);
   checkButton(total, maxGrab, listOfButtonID)
   if (turn % 2 != 0) {
       document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
