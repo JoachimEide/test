@@ -54,36 +54,41 @@ const makeGame = (maxGrab, totalCounter) => {
   }
 }
 
-const checkTurn = (turn, p1, p2) => {
+const checkTurn = (total, turn, p1, p2, p2Human) => {
   let message = "";
-  if (turn % 2 != 0) {
-    message = `Det er ${p1} sin tur:`
+  if (turn % 2 != 0 && p2Human === true) {
+    message = `Det er ${p1} sin tur:`;
     document.getElementById("message").innerHTML = message;
-  } else {
-    message = `Det er ${p2} sin tur:`
+  } else if (turn % 2 != 0 && p2Human === false) {
+    message = `Det er ${p2} sin tur:`;
+    function myFunction() {
+      setTimeout(function(){document.getElementById("message").innerHTML = message;
+      document.getElementById("total").innerHTML = total;}, 3000);
+    }
+    myFunction()
+  } else if (turn % 2 === 0 && p2Human === true) {
+    message = `Det er ${p2} sin tur:`;
+    document.getElementById("message").innerHTML = message;
+  } else if (turn % 2 === 0 && p2Human === false) {
+    message = `Det er ${p2} sin tur:`;
     document.getElementById("message").innerHTML = message;
   }
 }
 
-const computerChoice = (maxGrab) => {
-  let number = Math.floor(Math.random() * maxGrab) + 1;
-  return number;
-}
-
 const checkButton = (total, maxGrab, listOfButtonID) => {
-  if (total < 4) {
+  if (total < 4 && maxGrab === 4) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     maxGrab = 3;
   }
-  if (total < 3) {
+  if (total < 3 && maxGrab === 3) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     document.getElementById(listOfButtonID[5]).style.display="none";
     document.getElementById(listOfButtonID[4]).style.display="none";
     maxGrab = 2;
   }
-  if (total < 2) {
+  if (total < 2 && maxGrab ===2) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     document.getElementById(listOfButtonID[5]).style.display="none";
@@ -95,9 +100,32 @@ const checkButton = (total, maxGrab, listOfButtonID) => {
   return maxGrab;
 }
 
+const computerChoice = (total, maxGrab) => {
+  let choice = Math.floor(Math.random() * maxGrab) + 1;
+  if (total === 4 && maxGrab > 3) {
+    choice = 4;
+  } else if (total === 3 && maxGrab > 2){
+    choice = 3;
+  } else if (total === 2){
+    choice = 2;
+  } else if (total === 1){
+    choice = 1;
+  }
+  return choice;
+}
+
+const slowGrab = (total, turn, p1, p2, p2Human, maxGrab) => {
+  let randomGrab = computerChoice(total, turn, maxGrab);
+  total -= randomGrab;
+  turn--;
+  console.log(randomGrab);
+  buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+
+}
+
 const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-  checkTurn(turn, p1, p2);
+  checkTurn(total, turn, p1, p2, p2Human);
   checkButton(total, maxGrab, listOfButtonID)
 
   if (turn % 2 != 0) {
@@ -153,10 +181,6 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
     },{once: true})
 
   } else if (turn % 2 === 0 && p2Human === false ){
-    let computerNumber = computerChoice()
-    total -= computerNumber;
-    turn--;
-    document.getElementById("total").innerHTML = total;
-    buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      setTimeout(function(){slowGrab()}, 2000);
   }
-  }
+}
