@@ -66,19 +66,19 @@ const checkTurn = (turn, p1, p2) => {
 }
 
 const checkButton = (total, maxGrab, listOfButtonID) => {
-  if (total < 4) {
+  if (total < 4 && maxGrab === 4) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     maxGrab = 3;
   }
-  if (total < 3) {
+  if (total < 3 && maxGrab === 3) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     document.getElementById(listOfButtonID[5]).style.display="none";
     document.getElementById(listOfButtonID[4]).style.display="none";
     maxGrab = 2;
   }
-  if (total < 2) {
+  if (total < 2 && maxGrab ===2) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     document.getElementById(listOfButtonID[5]).style.display="none";
@@ -146,9 +146,9 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
     },{once: true})
   } else if (turn % 2 === 0 && p2Human === false ){
     let randomGrab = Math.floor(Math.random() * maxGrab) + 1;
-    if (total === 4) {
+    if (total === 4 && maxGrab > 3) {
       randomGrab = 4;
-    } else if (total === 3){
+    } else if (total === 3 && maxGrab > 2){
       randomGrab = 3;
     } else if (total === 2){
       randomGrab = 2;
