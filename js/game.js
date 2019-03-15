@@ -105,6 +105,7 @@ const aiRobot2 = (total, turn, p1, p2, p2Human, maxGrab) => {
   turn--;
   console.log(randomGrab);
   document.getElementById("total").innerHTML = total;
+  buttonAction(total, turn, p1, p2, p2Human, maxGrab);
 }
 
 const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
@@ -163,6 +164,5 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
     },{once: true})
   } else if (turn % 2 === 0 && p2Human === false ){
       aiRobot2(total, turn, p1, p2, p2Human, maxGrab);
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
   }
   }
