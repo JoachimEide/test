@@ -59,11 +59,11 @@ const checkTurn = (total, turn, p1, p2, p2Human) => {
   if (turn % 2 != 0 && p2Human === true) {
     message = `Det er ${p1} sin tur:`;
     document.getElementById("message").innerHTML = message;
-  } else if (turn % 2 === 0 && p2Human === false) {
-    message = `Det er ${p2} sin tur:`;
+  } else if (turn % 2 != 0 && p2Human === false) {
+    message = `Det er ${p1} sin tur:`;
     function myFunction() {
       setTimeout(function(){document.getElementById("message").innerHTML = message;
-      document.getElementById("total").innerHTML = total;}, 3000);
+      document.getElementById("total").innerHTML = total;}, 2000);
     }
     myFunction()
   } else if (turn % 2 === 0 && p2Human === true) {
