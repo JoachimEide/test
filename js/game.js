@@ -72,6 +72,7 @@ const checkTurn = (total, turn, p1, p2, p2Human) => {
   } else if (turn % 2 === 0 && p2Human === false) {
     message = `Det er ${p2} sin tur:`;
     document.getElementById("message").innerHTML = message;
+    document.getElementById("total").innerHTML = total;
   }
 }
 
@@ -119,31 +120,30 @@ const aiRobot2 = (total, turn, p1, p2, p2Human, maxGrab) => {
 
 const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-  checkTurn(total, turn, p1, p2, p2Human);
-  checkButton(total, maxGrab, listOfButtonID)
-  if (turn % 2 != 0) {
+if (turn % 2 === 0 && p2Human === false) {
+    aiRobot2(total, turn, p1, p2, p2Human, maxGrab);
+}
+checkTurn(total, turn, p1, p2, p2Human);
+checkButton(total, maxGrab, listOfButtonID);
+if (turn % 2 != 0 && p2Human === false) {
       document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
       total -= 1;
       turn++;
-      document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
       document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
       total -= 2;
       turn++;
-      document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
     document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
       total -= 3;
       turn++;
-      document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
     document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
       total -= 4;
       turn++;
-      document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
   } else if (turn % 2 === 0 && p2Human === true ) {
@@ -171,7 +171,30 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
       document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
-  } else if (turn % 2 === 0 && p2Human === false ){
-      aiRobot2(total, turn, p1, p2, p2Human, maxGrab);
+  }  else if (turn % 2 != 0 && p2Human === true ) {
+    document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
+      total -= 1;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+    },{once: true})
+    document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
+      total -= 2;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+    },{once: true})
+    document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
+      total -= 3;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+    },{once: true})
+    document.getElementById(listOfButtonID[7]).addEventListener("click", function(){
+      total -= 4;
+      turn--;
+      document.getElementById("total").innerHTML = total;
+      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+    },{once: true})
   }
-  }
+}
