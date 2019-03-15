@@ -90,6 +90,23 @@ const checkButton = (total, maxGrab, listOfButtonID) => {
   return maxGrab;
 }
 
+const aiRobot2 = (total, turn, p1, p2, p2Human, maxGrab) => {
+  let randomGrab = Math.floor(Math.random() * maxGrab) + 1;
+  if (total === 4 && maxGrab > 3) {
+    randomGrab = 4;
+  } else if (total === 3 && maxGrab > 2){
+    randomGrab = 3;
+  } else if (total === 2){
+    randomGrab = 2;
+  } else if (total === 1){
+    randomGrab = 1;
+  }
+  total -= randomGrab;
+  turn--;
+  console.log(randomGrab);
+  document.getElementById("total").innerHTML = total;
+}
+
 const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
   checkTurn(turn, p1, p2);
@@ -145,20 +162,7 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
   } else if (turn % 2 === 0 && p2Human === false ){
-    let randomGrab = Math.floor(Math.random() * maxGrab) + 1;
-    if (total === 4 && maxGrab > 3) {
-      randomGrab = 4;
-    } else if (total === 3 && maxGrab > 2){
-      randomGrab = 3;
-    } else if (total === 2){
-      randomGrab = 2;
-    } else if (total === 1){
-      randomGrab = 1;
-    }
-    total -= randomGrab;
-    turn--;
-    console.log(randomGrab);
-    document.getElementById("total").innerHTML = total;
-    buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      aiRobot2(total, turn, p1, p2, p2Human, maxGrab);
+      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
   }
   }
