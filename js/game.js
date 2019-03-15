@@ -59,6 +59,7 @@ const checkTurn = (total, turn, p1, p2, p2Human) => {
   if (turn % 2 != 0 && p2Human === true) {
     message = `Det er ${p1} sin tur:`;
     document.getElementById("message").innerHTML = message;
+
   } else if (turn % 2 != 0 && p2Human === false) {
     message = `Det er ${p1} sin tur:`;
     function myFunction() {
@@ -66,9 +67,11 @@ const checkTurn = (total, turn, p1, p2, p2Human) => {
       document.getElementById("total").innerHTML = total;}, 2000);
     }
     myFunction()
+
   } else if (turn % 2 === 0 && p2Human === true) {
     message = `Det er ${p2} sin tur:`;
     document.getElementById("message").innerHTML = message;
+
   } else if (turn % 2 === 0 && p2Human === false) {
     message = `Det er ${p2} sin tur:`;
     document.getElementById("message").innerHTML = message;
@@ -121,6 +124,7 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
   checkTurn(total, turn, p1, p2, p2Human);
   checkButton(total, maxGrab, listOfButtonID)
+
   if (turn % 2 != 0) {
       document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
       total -= 1;
@@ -146,7 +150,8 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
       document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
-  } else if (turn % 2 === 0 && p2Human === true ) {
+
+  } else if (turn % 2 === 0 && p2Human === true) {
     document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
       total -= 1;
       turn--;
@@ -171,7 +176,8 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
       document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
+
   } else if (turn % 2 === 0 && p2Human === false ){
       aiRobot2(total, turn, p1, p2, p2Human, maxGrab);
   }
-  }
+}
