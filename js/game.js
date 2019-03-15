@@ -180,25 +180,25 @@ if (turn % 2 != 0 && p2Human === false) {
     },{once: true})
 
   }  else if (turn % 2 != 0 && p2Human === true ) {
-    document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
+    document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
       total -= 1;
       turn--;
       document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
-    document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
+    document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
       total -= 2;
       turn--;
       document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
-    document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
+    document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
       total -= 3;
       turn--;
       document.getElementById("total").innerHTML = total;
       buttonAction(total, turn, p1, p2, p2Human, maxGrab);
     },{once: true})
-    document.getElementById(listOfButtonID[7]).addEventListener("click", function(){
+    document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
       total -= 4;
       turn--;
       document.getElementById("total").innerHTML = total;
