@@ -125,14 +125,15 @@ main {
   border: 3px solid #E8E8E8;;
 }
 
-.endgame {
+#endgame {
   display: none;
 }
-.endgame, h1{
+/*.endgame, h1{
   font-size: 20px;
   font-family: Helvetica;
-  color: white; 
+  color: white;
 }
+*/
 
 @media screen and (max-width: 600px){
   .left {

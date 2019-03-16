@@ -127,6 +127,7 @@ const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
 console.log(turn);
 if (total === 0 && turn === 2) {
   document.getElementById("game").style.display="none";
+  document.getElementById("endgame").style.display="block";
   victory(p1); // Her legger vi til utseendet for når p1 vinner
   console.log(`${p1} is the winner!`); //Her må vi kjøre en funksjon som får oss ut av buttonAction og som starter victory
 }
