@@ -140,6 +140,15 @@ main {
   padding-left: 20px;
 }
 
+#winnermessage {
+  margin-top: 50px;
+}
+
+#nyttspill,
+#prøvigjen {
+  margin-top:20px;
+}
+
 
 @media screen and (max-width: 600px){
   .left {
