@@ -114,26 +114,30 @@ main {
   color: white;
   opacity: 1;
 }
-.player-form button {
+.player-form button,
+#nyttspill,
+#prøvigjen {
   width:150px;
   height: 30px;
   background: linear-gradient(to left, #093637, #44A08D);
   color: #E8E8E8;
   border-radius: 5px;
 }
-.player-form button:hover {
+.player-form button:hover,
+#nyttspill:hover,
+#prøvigjen:hover {
   border: 3px solid #E8E8E8;;
 }
 
 #endgame {
   display: none;
-}
-/*.endgame, h1{
-  font-size: 20px;
+  text-align: center;
   font-family: Helvetica;
-  color: white;
+  font-size: 20px;
+
 }
-*/
+
+
 
 @media screen and (max-width: 600px){
   .left {
