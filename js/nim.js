@@ -48,6 +48,13 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
 
 function victory(vinner){
-  var winner = vinner.name
-  return winner
+  alert("The winner is: "+vinner);
+  return vinner
+
 }
+
+/* function victory(vinner){
+  var winner = vinner.name;
+  alert("The winner is: "+winner);
+  return winner
+} */
