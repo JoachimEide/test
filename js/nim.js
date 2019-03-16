@@ -45,23 +45,34 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
 }
-
+/*
+// Som den skal være om den får objekt som argument:
 function victory(vinner){
-  document.getElementById("winnermessage").innerHTML = ("Vinneren er: "+vinner);
+  let winner = vinner.name;
+
+  document.getElementById("winnermessage").innerHTML = ("Vinneren er: "+ winner);
 
   document.getElementById("nyttspill").onclick = function () {
         location.href = "index.html";
     };
-
   document.getElementById("prøvigjen").onclick = function () {
         location.href = "game.html";
     };
-      
+
+  return winner;
+}
+*/
+
+
+// Denne funker, men det er ikke objekt som sendes inn:
+function victory(vinner) {
+  document.getElementById("winnermessage").innerHTML = ("Vinneren er: "+ vinner);
+
+  document.getElementById("nyttspill").onclick = function () {
+        location.href = "index.html";
+    };
+  document.getElementById("prøvigjen").onclick = function () {
+        location.href = "game.html";
+    };
   return vinner;
 }
-
-/* function victory(vinner){
-  var winner = vinner.name;
-  alert("The winner is: "+winner);
-  return winner
-} */

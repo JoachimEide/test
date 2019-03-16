@@ -43,16 +43,7 @@ main {
   border: 3px solid black  (22, 77, 100);
   border-radius: 9px;
 }
-.left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border:1px solid black (22, 77, 100);
-  border-radius: 9px;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+.left,
 .right {
   display: flex;
   flex-direction: column;
