@@ -45,7 +45,8 @@ function Nim(player1, player2, victory, total, maxGrab) {
   }
 
 }
-
+/*
+// Som den skal være om den får objekt som argument:
 function victory(vinner){
   let winner = vinner.name;
 
@@ -59,4 +60,19 @@ function victory(vinner){
     };
 
   return winner;
+}
+*/
+
+
+// Denne funker, men det er ikke objekt som sendes inn:
+function victory(vinner) {
+  document.getElementById("winnermessage").innerHTML = ("Vinneren er: "+ vinner);
+
+  document.getElementById("nyttspill").onclick = function () {
+        location.href = "index.html";
+    };
+  document.getElementById("prøvigjen").onclick = function () {
+        location.href = "game.html";
+    };
+  return vinner;
 }
