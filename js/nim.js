@@ -48,7 +48,7 @@ function Nim(player1, player2, victory, total, maxGrab) {
 
 
 function victory(vinner){
-  document.getElementById("winnerMessage").innerHTML = ("Vinneren er: "+vinner);
+  document.getElementById("winnermessage").innerHTML = ("Vinneren er: "+vinner);
   return vinner
 
 }
