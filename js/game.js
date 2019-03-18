@@ -32,13 +32,10 @@ const allInfo = () => {
 
 const getUserData = () => {
   const userData = JSON.parse(sessionStorage.getItem("info"));
-  console.log(userData);
   const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
-  console.log(gameObject)
   makeGame(gameObject)
   let turnCount = 1;
   buttonAction(gameObject, turnCount);
-  return console.log(gameObject);
   }
 
 
@@ -57,11 +54,11 @@ const makeGame = gameObject => {
 const checkTurn = (gameObject, turn) => {
   let message = "";
 
-  if (turn % 2 != 0 && gameObject.player2.human === true) {
+  if (turn === 1 && gameObject.player2.human === true) {
     message = `Det er ${gameObject.player1.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
 
-  } else if (turn % 2 != 0 && gameObject.player2.human === false) {
+  } else if (turn === 2 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player1.name} sin tur:`;
     function myFunction() {
       setTimeout(function(){document.getElementById("message").innerHTML = message;
@@ -69,11 +66,11 @@ const checkTurn = (gameObject, turn) => {
     }
     myFunction()
 
-  } else if (turn % 2 === 0 && gameObject.player2.human === true) {
+  } else if (turn === 2 && gameObject.player2.human === true) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
 
-  } else if (turn % 2 === 0 && gameObject.player2.human === false) {
+  } else if (turn === 1 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
     document.getElementById("total").innerHTML = gameObject.total;
@@ -102,7 +99,7 @@ const checkButton = (gameObject, listOfButtonID) => {
     document.getElementById(listOfButtonID[2]).style.display="none";
     gameObject.maxGrab = 1;
   }
-  return gameObject;
+  return gameObject.maxGrab;
 }
 
 const aiRobot2 = (gameObject, turn) => {
@@ -118,13 +115,13 @@ const aiRobot2 = (gameObject, turn) => {
   }
   gameObject.total -= randomGrab;
   turn = 1;
-  console.log(randomGrab);
+  console.log(`Her grabber computeren ${randomGrab}`);
   buttonAction(gameObject, turn);
 }
 
 const buttonAction = (gameObject, turn) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-console.log(turn);
+console.log(gameObject);
 if (gameObject.total === 0 && turn === 2) {
   document.getElementById("game").style.display="none";
   document.getElementById("endgame").style.display="block";
