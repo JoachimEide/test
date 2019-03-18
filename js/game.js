@@ -58,7 +58,7 @@ const checkTurn = (gameObject, turn) => {
     message = `Det er ${gameObject.player1.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
 
-  } else if (turn === 2 && gameObject.player2.human === false) {
+  } else if (turn === 1 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player1.name} sin tur:`;
     function myFunction() {
       setTimeout(function(){document.getElementById("message").innerHTML = message;
@@ -70,7 +70,7 @@ const checkTurn = (gameObject, turn) => {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
 
-  } else if (turn === 1 && gameObject.player2.human === false) {
+  } else if (turn === 2 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
     document.getElementById("total").innerHTML = gameObject.total;
@@ -120,6 +120,7 @@ const aiRobot2 = (gameObject, turn) => {
 }
 
 const buttonAction = (gameObject, turn) => {
+  console.log(`Det er spiller ${turn} sin tur`);
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
 console.log(gameObject);
 if (gameObject.total === 0 && turn === 2) {
