@@ -65,7 +65,6 @@ const checkTurn = (gameObject, turn) => {
       document.getElementById("total").innerHTML = gameObject.total;}, 2000);
     }
     myFunction()
-
   } else if (turn === 2 && gameObject.player2.human === true) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
@@ -119,9 +118,21 @@ const aiRobot2 = (gameObject, turn) => {
   buttonAction(gameObject, turn);
 }
 
+const eventFunc = (gameObject, listOfButtonID, index, value, turn) => {
+  document.getElementById(listOfButtonID[index]).addEventListener("click", function(){
+    gameObject.total -= value;
+    if (turn === 1) {
+      turn = 2;
+    } else {
+      turn = 1
+    }
+    buttonAction(gameObject, turn)})
+  }
+
+
 const buttonAction = (gameObject, turn) => {
-  console.log(`Det er spiller ${turn} sin tur`);
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
+  console.log(`Det er spiller ${turn} sin tur`);
   console.log(gameObject);
 if (gameObject.total === 0 && turn === 2) {
   document.getElementById("game").style.display="none";
@@ -141,77 +152,21 @@ checkTurn(gameObject, turn);
 checkButton(gameObject, listOfButtonID);
 
 if (turn === 1 && gameObject.player2.human === false) {
-  document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
-    gameObject.total -= 1;
-    turn = 2;
-    buttonAction(gameObject, turn);
-  },{once: true})
-  document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
-    gameObject.total -= 2;
-    turn = 2;
-    buttonAction(gameObject, turn);
-  },{once: true})
-  document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
-    gameObject.total -= 3;
-    turn = 2;
-    buttonAction(gameObject, turn);
-  },{once: true})
-  document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
-    gameObject.total -= 4;
-    turn = 2;
-    buttonAction(gameObject, turn);
-  },{once: true})
+eventFunc(gameObject, listOfButtonID, 0, 1, turn);
+eventFunc(gameObject, listOfButtonID, 2, 2, turn);
+eventFunc(gameObject, listOfButtonID, 4, 3, turn);
+eventFunc(gameObject, listOfButtonID, 6, 4, turn);
 
   } else if (turn === 2 && gameObject.player2.human === true) {
-    document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
-      gameObject.total -= 1;
-      turn = 1;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
-      gameObject.total -= 2;
-      turn = 1;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
-      gameObject.total -= 3;
-      turn = 1;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[7]).addEventListener("click", function(){
-      gameObject.total -= 4;
-      turn = 1;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
+    eventFunc(gameObject, listOfButtonID, 1, 1, turn);
+    eventFunc(gameObject, listOfButtonID, 3, 2, turn);
+    eventFunc(gameObject, listOfButtonID, 5, 3, turn);
+    eventFunc(gameObject, listOfButtonID, 7, 4, turn);
 
   } else if (turn === 1 && gameObject.player2.human === true) {
-    document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
-      gameObject.total -= 1;
-      turn = 2;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
-      gameObject.total -= 2;
-      turn = 2;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
-      gameObject.total -= 3;
-      turn = 2;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
-      gameObject.total -= 4;
-      turn = 2;
-      document.getElementById("total").innerHTML = gameObject.total;
-      buttonAction(gameObject, turn);
-    },{once: true})
+    eventFunc(gameObject, listOfButtonID, 0, 1, turn);
+    eventFunc(gameObject, listOfButtonID, 2, 2, turn);
+    eventFunc(gameObject, listOfButtonID, 4, 3, turn);
+    eventFunc(gameObject, listOfButtonID, 6, 4, turn);
   }
 }
