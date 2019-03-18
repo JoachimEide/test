@@ -35,18 +35,18 @@ const getUserData = () => {
   console.log(userData);
   const gameObject = new Nim(userData[0], userData[1], function (){victory()}, userData[2], userData[3]);
   console.log(gameObject)
-  makeGame(userData[3], userData[2])
+  makeGame(gameObject)
   let turnCount = 1;
-  buttonAction(gameObject.total, turnCount, gameObject.player1.name, gameObject.player2.name, gameObject.player2.human, gameObject.maxGrab);
+  buttonAction(gameObject, turnCount);
   return console.log(gameObject);
   }
 
 
-const makeGame = (maxGrab, totalCounter) => {
-  document.getElementById("total").innerHTML = totalCounter;
+const makeGame = gameObject => {
+  document.getElementById("total").innerHTML = gameObject.total;
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"]
   let counterOfButtonID = 0;
-  for (let i = 0; i < maxGrab; i++) {
+  for (let i = 0; i < gameObject.maxGrab; i++) {
     document.getElementById(listOfButtonID[counterOfButtonID]).style.display="block";
     counterOfButtonID++;
     document.getElementById(listOfButtonID[counterOfButtonID]).style.display="block";
@@ -54,168 +54,166 @@ const makeGame = (maxGrab, totalCounter) => {
   }
 }
 
-const checkTurn = (total, turn, p1, p2, p2Human) => {
+const checkTurn = (gameObject, turn) => {
   let message = "";
 
-  if (turn % 2 != 0 && p2Human === true) {
-    message = `Det er ${p1} sin tur:`;
+  if (turn % 2 != 0 && gameObject.player2.human === true) {
+    message = `Det er ${gameObject.player1.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
 
-  } else if (turn % 2 != 0 && p2Human === false) {
-    message = `Det er ${p1} sin tur:`;
+  } else if (turn % 2 != 0 && gameObject.player2.human === false) {
+    message = `Det er ${gameObject.player1.name} sin tur:`;
     function myFunction() {
       setTimeout(function(){document.getElementById("message").innerHTML = message;
-      document.getElementById("total").innerHTML = total;}, 2000);
+      document.getElementById("total").innerHTML = gameObject.total;}, 2000);
     }
     myFunction()
 
-  } else if (turn % 2 === 0 && p2Human === true) {
-    message = `Det er ${p2} sin tur:`;
+  } else if (turn % 2 === 0 && gameObject.player2.human === true) {
+    message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
 
-  } else if (turn % 2 === 0 && p2Human === false) {
-    message = `Det er ${p2} sin tur:`;
+  } else if (turn % 2 === 0 && gameObject.player2.human === false) {
+    message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
-    document.getElementById("total").innerHTML = total;
+    document.getElementById("total").innerHTML = gameObject.total;
   }
 }
 
-const checkButton = (total, maxGrab, listOfButtonID) => {
-  if (total < 4 && maxGrab === 4) {
+const checkButton = (gameObject, listOfButtonID) => {
+  if (gameObject.total < 4 && gameObject.maxGrab === 4) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
-    maxGrab = 3;
+    gameObject.maxGrab = 3;
   }
-  if (total < 3 && maxGrab === 3) {
+  if (gameObject.total < 3 && gameObject.maxGrab === 3) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     document.getElementById(listOfButtonID[5]).style.display="none";
     document.getElementById(listOfButtonID[4]).style.display="none";
-    maxGrab = 2;
+    gameObject.maxGrab = 2;
   }
-  if (total < 2 && maxGrab ===2) {
+  if (gameObject.total < 2 && gameObject.maxGrab ===2) {
     document.getElementById(listOfButtonID[7]).style.display="none";
     document.getElementById(listOfButtonID[6]).style.display="none";
     document.getElementById(listOfButtonID[5]).style.display="none";
     document.getElementById(listOfButtonID[4]).style.display="none";
     document.getElementById(listOfButtonID[3]).style.display="none";
     document.getElementById(listOfButtonID[2]).style.display="none";
-    maxGrab = 1;
+    gameObject.maxGrab = 1;
   }
-  return maxGrab;
+  return gameObject;
 }
 
-const aiRobot2 = (total, turn, p1, p2, p2Human, maxGrab) => {
-  let randomGrab = Math.floor(Math.random() * maxGrab) + 1;
-  if (total === 4 && maxGrab > 3) {
+const aiRobot2 = (gameObject, turn) => {
+  let randomGrab = Math.floor(Math.random() * gameObject.maxGrab) + 1;
+  if (gameObject.total === 4 && gameObject.maxGrab > 3) {
     randomGrab = 4;
-  } else if (total === 3 && maxGrab > 2){
+  } else if (gameObject.total === 3 && gameObject.maxGrab > 2){
     randomGrab = 3;
-  } else if (total === 2){
+  } else if (gameObject.total === 2){
     randomGrab = 2;
-  } else if (total === 1){
+  } else if (gameObject.total === 1){
     randomGrab = 1;
   }
-  total -= randomGrab;
+  gameObject.total -= randomGrab;
   turn = 1;
   console.log(randomGrab);
-  buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+  buttonAction(gameObject, turn);
 }
 
-const buttonAction = (total, turn, p1, p2, p2Human, maxGrab) => {
+const buttonAction = (gameObject, turn) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
 console.log(turn);
-if (total === 0 && turn === 2) {
+if (gameObject.total === 0 && turn === 2) {
   document.getElementById("game").style.display="none";
   document.getElementById("endgame").style.display="block";
-  victory(p1);
-  console.log(`${p1} is the winner!`);
+  victory(gameObject.player1);
 }
-if (total === 0 && turn === 1) {
+if (gameObject.total === 0 && turn === 1) {
   document.getElementById("game").style.display="none";
   document.getElementById("endgame").style.display="block";
-  victory(p2);
-  console.log(`${p2} is the winner!`);
+  victory(gameObject.player2);
 }
 
-if (turn === 2 && p2Human === false) {
-    aiRobot2(total, turn, p1, p2, p2Human, maxGrab);
+if (turn === 2 && gameObject.player2.human === false) {
+    aiRobot2(gameObject, turn);
 }
-checkTurn(total, turn, p1, p2, p2Human);
-checkButton(total, maxGrab, listOfButtonID);
+checkTurn(gameObject, turn);
+checkButton(gameObject, listOfButtonID);
 
-if (turn === 1 && p2Human === false) {
+if (turn === 1 && gameObject.player2.human === false) {
       document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
-      total -= 1;
+      gameObject.total -= 1;
       turn = 2;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      buttonAction(gameObject, turn);
     },{once: true})
       document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
-      total -= 2;
+      gameObject.total -= 2;
       turn = 2;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
-      total -= 3;
+      gameObject.total -= 3;
       turn = 2;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
-      total -= 4;
+      gameObject.total -= 4;
       turn = 2;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      buttonAction(gameObject, turn);
     },{once: true})
 
-  } else if (turn === 2 && p2Human === true ) {
+  } else if (turn === 2 && gameObject.player2.human === true ) {
     document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
-      total -= 1;
+      gameObject.total -= 1;
       turn = 1;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[3]).addEventListener("click", function(){
-      total -= 2;
+      gameObject.total -= 2;
       turn = 1;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[5]).addEventListener("click", function(){
-      total -= 3;
+      gameObject.total -= 3;
       turn = 1;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[7]).addEventListener("click", function(){
-      total -= 4;
+      gameObject.total -= 4;
       turn = 1;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
 
-  }  else if (turn === 1 && p2Human === true ) {
+  }  else if (turn === 1 && gameObject.player2.human === true ) {
     document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
-      total -= 1;
+      gameObject.total -= 1;
       turn = 2;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
-      total -= 2;
+      gameObject.total -= 2;
       turn = 2;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
-      total -= 3;
+      gameObject.total -= 3;
       turn = 2;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
     document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
-      total -= 4;
+      gameObject.total -= 4;
       turn = 2;
-      document.getElementById("total").innerHTML = total;
-      buttonAction(total, turn, p1, p2, p2Human, maxGrab);
+      document.getElementById("total").innerHTML = gameObject.total;
+      buttonAction(gameObject, turn);
     },{once: true})
   }
 }
