@@ -4,7 +4,7 @@ const getInfo = id => {
   if (info == "") {
     info = undefined
   }
-  return info
+  return info;
 }
 
 const humanOrMachine = check => {
@@ -122,7 +122,7 @@ const aiRobot2 = (gameObject, turn) => {
 const buttonAction = (gameObject, turn) => {
   console.log(`Det er spiller ${turn} sin tur`);
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-console.log(gameObject);
+  console.log(gameObject);
 if (gameObject.total === 0 && turn === 2) {
   document.getElementById("game").style.display="none";
   document.getElementById("endgame").style.display="block";
@@ -135,34 +135,34 @@ if (gameObject.total === 0 && turn === 1) {
 }
 
 if (turn === 2 && gameObject.player2.human === false) {
-    aiRobot2(gameObject, turn);
-}
+  aiRobot2(gameObject, turn);
+ }
 checkTurn(gameObject, turn);
 checkButton(gameObject, listOfButtonID);
 
 if (turn === 1 && gameObject.player2.human === false) {
-      document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
-      gameObject.total -= 1;
-      turn = 2;
-      buttonAction(gameObject, turn);
-    },{once: true})
-      document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
-      gameObject.total -= 2;
-      turn = 2;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
-      gameObject.total -= 3;
-      turn = 2;
-      buttonAction(gameObject, turn);
-    },{once: true})
-    document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
-      gameObject.total -= 4;
-      turn = 2;
-      buttonAction(gameObject, turn);
-    },{once: true})
+  document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
+    gameObject.total -= 1;
+    turn = 2;
+    buttonAction(gameObject, turn);
+  },{once: true})
+  document.getElementById(listOfButtonID[2]).addEventListener("click", function(){
+    gameObject.total -= 2;
+    turn = 2;
+    buttonAction(gameObject, turn);
+  },{once: true})
+  document.getElementById(listOfButtonID[4]).addEventListener("click", function(){
+    gameObject.total -= 3;
+    turn = 2;
+    buttonAction(gameObject, turn);
+  },{once: true})
+  document.getElementById(listOfButtonID[6]).addEventListener("click", function(){
+    gameObject.total -= 4;
+    turn = 2;
+    buttonAction(gameObject, turn);
+  },{once: true})
 
-  } else if (turn === 2 && gameObject.player2.human === true ) {
+  } else if (turn === 2 && gameObject.player2.human === true) {
     document.getElementById(listOfButtonID[1]).addEventListener("click", function(){
       gameObject.total -= 1;
       turn = 1;
@@ -188,7 +188,7 @@ if (turn === 1 && gameObject.player2.human === false) {
       buttonAction(gameObject, turn);
     },{once: true})
 
-  }  else if (turn === 1 && gameObject.player2.human === true ) {
+  } else if (turn === 1 && gameObject.player2.human === true) {
     document.getElementById(listOfButtonID[0]).addEventListener("click", function(){
       gameObject.total -= 1;
       turn = 2;
