@@ -57,6 +57,7 @@ const checkTurn = (gameObject, turn) => {
   if (turn === 1 && gameObject.player2.human === true) {
     message = `Det er ${gameObject.player1.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
+    document.getElementById("total").innerHTML = gameObject.total;
 
   } else if (turn === 1 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player1.name} sin tur:`;
@@ -68,6 +69,7 @@ const checkTurn = (gameObject, turn) => {
   } else if (turn === 2 && gameObject.player2.human === true) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
+    document.getElementById("total").innerHTML = gameObject.total;
 
   } else if (turn === 2 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
@@ -128,7 +130,6 @@ const eventFunc = (gameObject, listOfButtonID, index, value, turn) => {
     }
     buttonAction(gameObject, turn)})
   }
-
 
 const buttonAction = (gameObject, turn) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
