@@ -121,15 +121,26 @@ const aiRobot2 = (gameObject, turn) => {
 }
 
 const eventFunc = (gameObject, listOfButtonID, index, value, turn) => {
-  document.getElementById(listOfButtonID[index]).addEventListener("click", function(){
+  const removeAll = listOfButtonID => {
+    for (let i = 0; i < listOfButtonID.length; i++) {
+      let button = document.getElementById(listOfButtonID[i]);
+      return button.removeEventListener("click", eventArg, false);
+    }
+  }
+  let eventArg = function(){
+    removeAll(listOfButtonID);
     gameObject.total -= value;
     if (turn === 1) {
       turn = 2;
+      buttonAction(gameObject, turn);
     } else {
-      turn = 1
+      turn = 1;
+      buttonAction(gameObject, turn);
     }
-    buttonAction(gameObject, turn)})
   }
+  let button = document.getElementById(listOfButtonID[index]);
+  button.addEventListener("click", eventArg, false);
+}
 
 const buttonAction = (gameObject, turn) => {
   const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
