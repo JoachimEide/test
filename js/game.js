@@ -158,16 +158,16 @@ eventFunc(gameObject, listOfButtonID, 2, 2, turn);
 eventFunc(gameObject, listOfButtonID, 4, 3, turn);
 eventFunc(gameObject, listOfButtonID, 6, 4, turn);
 
-  } else if (turn === 2 && gameObject.player2.human === true) {
-    eventFunc(gameObject, listOfButtonID, 1, 1, turn);
-    eventFunc(gameObject, listOfButtonID, 3, 2, turn);
-    eventFunc(gameObject, listOfButtonID, 5, 3, turn);
-    eventFunc(gameObject, listOfButtonID, 7, 4, turn);
+} else if (turn === 2 && gameObject.player2.human === true) {
+  eventFunc(gameObject, listOfButtonID, 1, 1, turn);
+  eventFunc(gameObject, listOfButtonID, 3, 2, turn);
+  eventFunc(gameObject, listOfButtonID, 5, 3, turn);
+  eventFunc(gameObject, listOfButtonID, 7, 4, turn);
 
-  } else if (turn === 1 && gameObject.player2.human === true) {
-    eventFunc(gameObject, listOfButtonID, 0, 1, turn);
-    eventFunc(gameObject, listOfButtonID, 2, 2, turn);
-    eventFunc(gameObject, listOfButtonID, 4, 3, turn);
-    eventFunc(gameObject, listOfButtonID, 6, 4, turn);
+} else if (turn === 1 && gameObject.player2.human === true) {
+  eventFunc(gameObject, listOfButtonID, 0, 1, turn);
+  eventFunc(gameObject, listOfButtonID, 2, 2, turn);
+  eventFunc(gameObject, listOfButtonID, 4, 3, turn);
+  eventFunc(gameObject, listOfButtonID, 6, 4, turn);
   }
 }
