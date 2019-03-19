@@ -61,14 +61,13 @@ const checkTurn = (gameObject, turn) => {
 
   } else if (turn === 1 && gameObject.player2.human === false) {
     message = `Det er ${gameObject.player1.name} sin tur:`;
+    let total = gameObject.total;
     function delayMessage() {
-      setTimeout(function(){document.getElementById("message").innerHTML = message;}, 2000);
+      setTimeout(function(){document.getElementById("message").innerHTML = message;
+      document.getElementById("total").innerHTML = total;}, 2000);
     }
     delayMessage()
-    function delayTotal() {
-      setTimeout(function(){document.getElementById("total").innerHTML = gameObject.total;}, 2000);
-    }
-    delayTotal()
+
   } else if (turn === 2 && gameObject.player2.human === true) {
     message = `Det er ${gameObject.player2.name} sin tur:`;
     document.getElementById("message").innerHTML = message;
@@ -126,7 +125,7 @@ const aiRobot2 = (gameObject, turn) => {
 
 const buttonAction = (gameObject, turn) => {
 const listOfButtonID = ["p1-1","p2-1","p1-2","p2-2","p1-3","p2-3","p1-4","p2-4"];
-
+checkTurn(gameObject, turn);
 const player1 = document.querySelector("#left");
 const player2 = document.querySelector("#right");
 
@@ -163,7 +162,6 @@ if (gameObject.total === 0 && turn === 1) {
 if (turn === 2 && gameObject.player2.human === false) {
   aiRobot2(gameObject, turn);
  }
-checkTurn(gameObject, turn);
 checkButton(gameObject, listOfButtonID);
 
 if (turn === 1 && gameObject.player2.human === false) {
